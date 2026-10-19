@@ -23,3 +23,4 @@ if p >= 20 > n: msg = f"BTCUSDT 15m: StochRSI crossed BELOW 20 ({n:.1f})"
 if msg:
     requests.post(f"https://api.telegram.org/bot{TOKEN}/sendMessage",
                   data={"chat_id": CHAT, "text": msg}, timeout=20)
+requests.post(f"https://api.telegram.org/bot{TOKEN}/sendMessage", data={"chat_id": CHAT, "text": "test"}, timeout=20)
