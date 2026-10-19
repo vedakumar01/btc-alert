@@ -36,5 +36,5 @@ if p <= 20 < n: send(f"{tag}: crossed ABOVE 20 ({n:.1f}) | price {price:.0f}")
 if p >= 20 > n: send(f"{tag}: crossed BELOW 20 ({n:.1f}) | price {price:.0f}")
 
 t = datetime.now(timezone.utc)
-if t.hour == 3 and 30 <= t.minute < 45:     # 03:30 UTC = 9:00 AM IST
+if True:     # 03:30 UTC = 9:00 AM IST
     send(f"Bot alive. BTCUSDT 15m: K={k.iloc[-1]:.1f}, D={dl.iloc[-1]:.1f}, price {price:.0f}")
