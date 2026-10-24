@@ -3,9 +3,9 @@ from datetime import datetime, timezone
 
 TOKEN = os.environ["TG_TOKEN"]
 CHAT = os.environ["TG_CHAT"]
-LINE = "K"    # "K" = fast line (cyan), "D" = slow line (yellow)
-HIGH = 70     # upper level
-LOW = 30      # lower level
+LINE = "K"      # "K" = fast line (cyan), "D" = slow line (yellow)
+HIGH = 75       # upper level
+LOW = 25        # lower level
 SYMBOL = "BTCUSD"
 BASES = ["https://api.india.delta.exchange", "https://cdn.india.deltaex.org"]
 
@@ -49,8 +49,8 @@ tag = f"{SYMBOL} 15m ({LINE} line)"
 
 if p <= HIGH < n: send(f"{tag}: crossed ABOVE {HIGH} ({n:.1f}) | price {price:.0f}")
 if p >= HIGH > n: send(f"{tag}: crossed BELOW {HIGH} ({n:.1f}) | price {price:.0f}")
-if p <= LOW < n:  send(f"{tag}: crossed ABOVE {LOW} ({n:.1f}) | price {price:.0f}")
-if p >= LOW > n:  send(f"{tag}: crossed BELOW {LOW} ({n:.1f}) | price {price:.0f}")
+if p <= LOW < n: send(f"{tag}: crossed ABOVE {LOW} ({n:.1f}) | price {price:.0f}")
+if p >= LOW > n: send(f"{tag}: crossed BELOW {LOW} ({n:.1f}) | price {price:.0f}")
 
 t = datetime.now(timezone.utc)
 if t.hour == 3 and 30 <= t.minute < 45:     # 03:30 UTC = 9:00 AM IST
